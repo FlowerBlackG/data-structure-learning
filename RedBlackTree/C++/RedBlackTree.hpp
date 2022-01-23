@@ -68,7 +68,7 @@ DataType& RedBlackTree<KeyType, DataType>::getData(const KeyType& key)
 		}
 	}
 
-	throw std::runtime_error("could not find your key in this object."); // 找不到对应键。抛出异常。
+	throw std::runtime_error("could not find your key in the object."); // 找不到对应键。抛出异常。
 }
 
 template<typename KeyType, typename DataType>
@@ -147,7 +147,7 @@ RedBlackTree<KeyType, DataType>& RedBlackTree<KeyType, DataType>::removeKey(
 	}
 
 	if (currentNode == nullptr) {
-		return *this; // 找不到对应键。
+		throw std::runtime_error("could not find your key in the object."); // 找不到对应键。抛出异常。
 	}
 
 	// 否则，使用替代法，锁定替代的节点。
